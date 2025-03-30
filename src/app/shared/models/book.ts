@@ -1,5 +1,10 @@
-
 export interface Book {
-  id: string;
+  id?: string;
   title: string;
+  languages?: string[];
+  author: string;
+  publisher: string;
+  firstPublishYear: number;
+  coverId: string;
+  description?: string;
 }

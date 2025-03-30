@@ -1,1 +1,2 @@
-<p>books works!</p>
+
+<grid-display [list$]="books$" (onGridItemClick)="openDialog($event)" (onCreateNewBook)="onCreateNewBook()"></grid-display>

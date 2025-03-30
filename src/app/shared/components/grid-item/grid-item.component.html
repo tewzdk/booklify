@@ -1,0 +1,14 @@
+<div
+  class="book"
+  [ngStyle]="{
+    'background-image':
+      'linear-gradient(to bottom, var(--gradient-color-1), var(--gradient-color-2)), url(' +
+      imageUrl +
+      ')',
+    'background-size': 'cover',
+    'background-repeat': 'no-repeat'
+  }"
+>
+  <h2>{{ book().title }}</h2>
+  <p>by: {{ book().author }}</p>
+</div>
