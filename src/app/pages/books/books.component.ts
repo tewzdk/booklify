@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BookDialogComponent } from '../../dialogs/book-dialog/book-dialog.component';
@@ -8,7 +8,7 @@ import { select, Store } from '@ngrx/store';
 import { BooksState } from '../../store/books/books.state';
 import { CommonModule } from '@angular/common';
 import { GridDisplayComponent } from '../../shared/components/grid-display/grid-display.component';
-import * as BooksActions from '../../store/books/books.actions';
+import { SearchFieldComponent } from '../../shared/components/search-field/search-field.component';
 
 @Component({
   selector: 'app-books',
@@ -18,44 +18,39 @@ import * as BooksActions from '../../store/books/books.actions';
     MatDialogModule,
     MatButtonModule,
     GridDisplayComponent,
+    SearchFieldComponent,
   ],
   templateUrl: './books.component.html',
   styleUrl: './books.component.scss',
 })
-export class BooksComponent implements OnInit {
+export class BooksComponent {
   books$: Observable<Book[]>;
 
   constructor(
     private store: Store<{ books: BooksState }>,
     private dialog: MatDialog
   ) {
-    this.books$ = this.store.pipe(select((state) => state.books.books));
-  }
-  ngOnInit(): void {
-    this.books$.subscribe((books) => {});
+    this.books$ = this.store.pipe(
+      select((state) => {
+        const filter = state.books.filter;
+        return state.books.books.filter((book: Book) =>
+          book.title.toLowerCase().includes(filter.toLowerCase())
+        );
+      })
+    );
   }
 
-  openDialog(book: Book): void {
-    const dialogRef = this.dialog.open(BookDialogComponent, {
+  onUpdateBook(book: Book): void {
+    this.dialog.open(BookDialogComponent, {
       width: '800px',
       data: { book: book },
-    });
-
-    dialogRef.afterClosed().subscribe((updatedBook) => {
-      this.store.dispatch(BooksActions.updateBook({ book: updatedBook }));
     });
   }
 
   onCreateNewBook() {
-    const dialogRef = this.dialog.open(BookDialogComponent, {
+    this.dialog.open(BookDialogComponent, {
       width: '800px',
       data: { book: null },
-    });
-
-    dialogRef.afterClosed().subscribe((book) => {
-      if (book) {
-        this.store.dispatch(BooksActions.createBook({ book }));
-      }
     });
   }
 }
