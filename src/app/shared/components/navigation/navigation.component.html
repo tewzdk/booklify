@@ -1,11 +1,15 @@
-<div class="content">
-  <div class="content__navigation">
+<mat-toolbar class="content">
+  <span class="content__logo">Booklify</span>
+
+  <span class="content__navigation">
     <button mat-stroked-button routerLink="/">Home</button>
     <button mat-stroked-button routerLink="/books">Books</button>
     <button mat-stroked-button routerLink="/about">About</button>
-  </div>
+  </span>
 
-  <div (click)="toggleTheme()" class="content__theme">
-    <mat-icon>{{ darkMode ? "light_mode" : "dark_mode" }}</mat-icon>
-  </div>
-</div>
+  <span class="content__theme">
+    <div (click)="toggleTheme()" class="content__theme">
+      <mat-icon>{{ darkMode ? "light_mode" : "dark_mode" }}</mat-icon>
+    </div>
+  </span>
+</mat-toolbar>

@@ -1,0 +1,26 @@
+<mat-form-field class="example-full-width">
+  <mat-label>Search OpenLibrary</mat-label>
+  <input
+    #input
+    type="text"
+    placeholder="Lord of the Rings..."
+    matInput
+    [disabled]="loading"
+    [(ngModel)]="searchValue"
+    (input)="searchLibrary($event)"
+    [matAutocomplete]="auto"
+    cdkFocusInitial
+  />
+  <mat-spinner *ngIf="loading" [diameter]="20" matSuffix></mat-spinner>
+  <mat-autocomplete
+    requireSelection
+    [displayWith]="displayFn.bind(this)"
+    (optionSelected)="bookSelected($event)"
+
+    #auto="matAutocomplete"
+  >
+    @for (option of filteredOptions; track option) {
+    <mat-option [value]="option">{{ option?.title }}</mat-option>
+    }
+  </mat-autocomplete>
+</mat-form-field>

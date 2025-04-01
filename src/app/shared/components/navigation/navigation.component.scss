@@ -1,20 +1,21 @@
 .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 40px 0 64px;
+    position: sticky;
+    top: 0;
+
+    &__logo {
+        padding-left: 1rem;
+        color: var(--mat-sys-primary);
+    }
 
     &__navigation {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: row;
-        justify-content: center;
         gap: 1rem;
+        display: flex;
+        justify-content: center;
+        flex: 1 1 auto;
     }
 
     &__theme {
-        display: flex;
-        align-items: center;
+        padding-right: 1rem;
         cursor: pointer;
     }
 }

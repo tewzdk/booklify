@@ -12,7 +12,7 @@ import { GridItemComponent } from '../grid-item/grid-item.component';
   styleUrl: './grid-display.component.scss',
 })
 export class GridDisplayComponent {
-  list$ = input.required<Observable<Book[]>>();
+  books$ = input.required<Observable<Book[]>>();
 
   onGridItemClick = output<Book>();
   onCreateNewBook = output<void>();

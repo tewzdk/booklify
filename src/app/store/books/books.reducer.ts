@@ -5,6 +5,10 @@ import { Book } from '../../shared/models/book';
 
 export const booksReducer = createReducer(
   initialState,
+  on(BooksActions.filterBooks, (state, { searchTerm }) => ({
+    ...state,
+    filter: searchTerm,
+  })),
   on(BooksActions.loadBooks, (state) => ({
     ...state,
     loading: true,
@@ -20,9 +24,9 @@ export const booksReducer = createReducer(
     loading: false,
     books: state.books.map((b: Book) => (b.id === book.id ? book : b)),
   })),
-  on(BooksActions.deleteBook, (state, { id }) => ({
+  on(BooksActions.deleteBook, (state, { bookId }) => ({
     ...state,
     loading: false,
-    books: state.books.filter((b: Book) => b.id !== id),
+    books: state.books.filter((b: Book) => b.id !== bookId),
   }))
 );

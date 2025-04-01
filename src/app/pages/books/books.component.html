@@ -1,2 +1,8 @@
-
-<grid-display [list$]="books$" (onGridItemClick)="openDialog($event)" (onCreateNewBook)="onCreateNewBook()"></grid-display>
+<body>
+  <search-field></search-field>
+  <grid-display
+    [books$]="books$"
+    (onGridItemClick)="onUpdateBook($event)"
+    (onCreateNewBook)="onCreateNewBook()"
+  ></grid-display>
+</body>

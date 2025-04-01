@@ -3,6 +3,7 @@ import { Book } from '../../shared/models/book';
 export interface BooksState {
   books: Book[]; // List of books
   page: number; // Current page
+  filter: string;
   total_pages: number; // Total number of pages
   loading: boolean; // Loading state
   error: string | null; // Error message
@@ -29,6 +30,7 @@ export const initialState: BooksState = {
       coverId: '14826089',
     },
   ],
+  filter: '',
   page: 1,
   total_pages: 0,
   loading: false,

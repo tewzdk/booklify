@@ -16,7 +16,12 @@ export const updateBook = createAction(
 
 export const deleteBook = createAction(
   '[Books] Delete Book',
-  props<{ id: string }>()
+  props<{ bookId: string }>()
+);
+
+export const filterBooks = createAction(
+  '[Books] Filter Books',
+  props<{ searchTerm: string }>()
 );
 
 export const incrementPage = createAction('[Books] Increment Page');

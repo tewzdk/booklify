@@ -1,12 +1,11 @@
 .book {
     padding: 2em;
-    border: 1px solid rgb(75, 82, 92);
     border-radius: 10px;
-    background-color: var(--input-background);
     text-align: center;
 
     &:hover {
-        box-shadow: 0px 4px 10px var(--gradient-color-1);
+        box-shadow: 0px 4px 10px var(--box-shadow-dim);
+
     }
 
     &__title {
@@ -36,6 +35,5 @@
         width: 100%;
         text-align: left;
         font-size: 0.8rem;
-        color: var(--accent-text-color);
     }
 }

@@ -6,5 +6,5 @@ export interface Book {
   publisher: string;
   firstPublishYear: number;
   coverId: string;
-  description?: string;
+  summary?: string;
 }
