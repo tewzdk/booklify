@@ -1,27 +1,74 @@
 # Booklify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+This Angular application is using the latest version, Angular 19. The app has a table with books, that can be sorted and searched. It also has a books page where the user can create update and delete the state of books. The creation of books also has the possibility to search for books in the OpenLibrary database. Lastly on the about page there is a app wide theming, that lets the user change the Material themes. On the navigation bar there is a toggle icon to switch DarkMode on and off.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Routing
+- Color Theming
+- Search functionality
+- Reusable components
+- State Handling
+- Dark Mode
+- Angular animations
+- Cypress Tests
 
-## Code scaffolding
+## Technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+List of Framework and libraries used
 
-## Build
+- Angular 19
+- Typescript
+- SCSS for styling with the BEM syntax
+- NgRx
+- Angular Animations
+- Angular Material
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prerequisites
 
-## Running unit tests
+It is recommended to first update npm to atleast version 18.19.1 or higher. Check your version by running:\
+`node -v`\
+`npm -v`\
+If you need to update go to https://nodejs.org/en
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+**Clone the repository**:\
+`git clone https://github.com/tewzdk/booklify.git`\
+-- or copy the link into your favorite git client\
+**Navigate to the project directory**:\
+`cd project-name`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Install dependencies**:\
+`npm install`
 
-## Further help
+**Start the development server**:\
+`ng serve`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
+
+**Open the app in a browser**
+http://localhost:4200
+
+## How to run Tests
+
+In order to run the cypress tests, you first have to have the local environment up and running as explains above.\
+Now you will have to open another terminal, and type in: \
+`npx cypress open`\
+Now wait for cypress to open then, select E2E testing in the cypress windows, and after select your preferred browser and Start E2E.\
+In the browser you now see the cypress view, On the side navigation, select Specs, and run any of the specs.
+
+## Architecture
+
+- cypress
+  - e2e
+- src
+  - app
+    - dialogs
+    - pages
+    - services
+    - shared
+      - components
+      - models
+    - store
+      - books
