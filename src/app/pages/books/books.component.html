@@ -1,8 +1,8 @@
-<body>
+<article>
   <search-field></search-field>
   <grid-display
     [books$]="books$"
     (onGridItemClick)="onUpdateBook($event)"
     (onCreateNewBook)="onCreateNewBook()"
   ></grid-display>
-</body>
+</article>

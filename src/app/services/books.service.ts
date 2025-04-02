@@ -40,9 +40,8 @@ export class BooksService {
         [Validators.required, Validators.pattern('^[0-9]{4}$')],
       ],
       author: ['', [Validators.required, Validators.minLength(3)]],
-      publisher: [''],
       coverId: [''],
-      summary: [''],
+      summary: ['', [Validators.required]],
     });
   }
 

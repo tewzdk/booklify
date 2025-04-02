@@ -1,0 +1,13 @@
+article {
+    padding: min(50px, 7%);
+
+    mat-card {
+        box-shadow: 0px 5px 10px var(--box-shadow-dim);
+    }
+
+}
+
+.top-anchor {
+    position: absolute;
+    top: 0;
+}

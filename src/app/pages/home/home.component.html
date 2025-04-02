@@ -1,1 +1,32 @@
-<books-table></books-table>
+<div #top class="top-anchor"></div>
+<article>
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Welcome to Booklify!</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Here at Booklify, we are passionate about books and the stories they
+        tell. Our mission is to provide a platform where book lovers can
+        discover or share their favorite reads. Whether you're looking for your
+        next great read or want to change some Material themes, Booklify is the
+        place for you.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="/about">Learn More</button>
+    </mat-card-actions>
+  </mat-card>
+  <br />
+  <mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Booklify Catalogue <br><br></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <books-table [data$]="books$"></books-table>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="scrollToTop()">Scroll top</button>
+    </mat-card-actions>
+  </mat-card>
+</article>

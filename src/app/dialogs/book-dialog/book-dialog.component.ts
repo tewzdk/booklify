@@ -84,7 +84,6 @@ export class BookDialogComponent {
         title: this.book().title,
         firstPublishYear: this.book().firstPublishYear,
         author: this.book().author,
-        publisher: this.book().publisher,
         coverId: this.book().coverId,
         summary: this.book().summary,
       });

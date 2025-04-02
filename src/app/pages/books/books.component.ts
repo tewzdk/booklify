@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { GridDisplayComponent } from '../../shared/components/grid-display/grid-display.component';
 import { SearchFieldComponent } from '../../shared/components/search-field/search-field.component';
+import { selectFilteredBooks } from '../../store/books/books.selectors';
 
 @Component({
   selector: 'app-books',
@@ -32,15 +33,7 @@ export class BooksComponent implements OnDestroy {
     private store: Store<{ books: BooksState }>,
     private dialog: MatDialog
   ) {
-    this.books$ = this.store.pipe(
-      select((state) => {
-        const filter = state.books.filter;
-        return state.books.books.filter((book: Book) =>
-          book.title.toLowerCase().includes(filter.toLowerCase())
-        );
-      }),
-      takeUntil(this.destroy$)
-    );
+    this.books$ = this.store.select(selectFilteredBooks);
   }
 
   onUpdateBook(book: Book): void {
