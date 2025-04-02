@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from '../../../services/theme.service';
@@ -9,7 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   selector: 'app-navigation',
   standalone: true,
   imports: [
-    RouterLink,
+    RouterModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,

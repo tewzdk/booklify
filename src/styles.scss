@@ -18,12 +18,6 @@ h1 {
 
 
 html {
-    --gradient-color-1: var(--mat-sys-surface-variant);
-    --gradient-color-2: var(--mat-sys-surface-variant);
-
-    --gradient-color-3: #ff7e5f;
-    --gradient-color-4: #feb47b;
-
     --box-shadow-dim: rgba(0, 0, 0, 0.1);
     color-scheme: light;
     @include mat.theme((color: mat.$red-palette,

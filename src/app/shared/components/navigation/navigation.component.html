@@ -2,13 +2,31 @@
   <span class="content__logo">Booklify</span>
 
   <span class="content__navigation">
-    <button cy-testid="navigation-home" mat-stroked-button routerLink="/">
+    <button
+      cy-testid="navigation-home"
+      mat-stroked-button
+      routerLink="/"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       Home
     </button>
-    <button cy-testid="navigation-books" mat-stroked-button routerLink="/books">
+    <button
+      cy-testid="navigation-books"
+      mat-stroked-button
+      routerLink="/books"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       Books
     </button>
-    <button cy-testid="navigation-about" mat-stroked-button routerLink="/about">
+    <button
+      cy-testid="navigation-about"
+      mat-stroked-button
+      routerLink="/about"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       About
     </button>
   </span>
