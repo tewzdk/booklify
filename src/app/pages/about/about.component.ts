@@ -5,10 +5,17 @@ import { ThemeService, default_themes } from '../../services/theme.service';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { Theme } from '../../shared/models/theme';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-about',
-  imports: [MatCardModule, MatButtonModule, MatIconModule, CommonModule],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    CommonModule,
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })

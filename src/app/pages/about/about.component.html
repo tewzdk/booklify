@@ -1,9 +1,34 @@
 <article cy-testid="about-article">
   <mat-card appearance="outlined">
     <mat-card-header>
-      <mat-card-title>About this app</mat-card-title>
+      <mat-card-title>About this App</mat-card-title>
     </mat-card-header>
-    <mat-card-content>This app demonstrates, how to </mat-card-content>
+    <mat-card-content>
+      <p>
+        This app showcases Angular Material and demonstrates various features,
+        including data management with NGRX, dynamic theme switching, and form
+        validation. The app is divided into three main pages:
+      </p>
+      <section>
+        <strong>Home:</strong> A table with filtering and sorting capabilities
+        to easily manage data. <br />
+
+        <strong>Books:</strong> A grid displaying books stored in the NGRX
+        store, with options to create, update, or delete entries. The form for
+        creating/updating books uses form validation within an expansion panel.
+        <br />
+
+        <strong>About:</strong> Change the app's theme with a single click and
+        switch between light/dark mode for a personalized experience. <br />
+      </section>
+      <br />
+      <mat-divider></mat-divider>
+
+      <p>
+        Enjoy exploring the app and customizing its look and functionality to
+        fit your needs!
+      </p>
+    </mat-card-content>
   </mat-card>
 
   <mat-card appearance="outlined" class="theme-card">
