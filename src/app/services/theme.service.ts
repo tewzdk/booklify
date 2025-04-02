@@ -1,13 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { inject, Injectable, signal } from '@angular/core';
+import { Theme } from '../shared/models/theme';
 
 export type ThemeMode = 'light' | 'dark';
-
-export interface Theme {
-  text: string;
-  code: string;
-  primary: string;
-}
 
 export const default_themes: Theme[] = [
   {

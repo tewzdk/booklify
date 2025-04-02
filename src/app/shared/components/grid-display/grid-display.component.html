@@ -1,10 +1,18 @@
 <body *ngIf="books$() | async as books">
   <div class="grid">
-    <div cy-testid="books-create-dialog-btn" class="grid__card" (click)="onCreateNewBook.emit()">
+    <div
+      cy-testid="books-create-dialog-btn"
+      class="grid__card"
+      (click)="onCreateNewBook.emit()"
+    >
       <h2>+ Create New</h2>
     </div>
     @for (book of books; track book;) {
-    <grid-item cy-testid="grid-item" [book]="book" (click)="onGridItemClick.emit(book)"></grid-item>
+    <grid-item
+      cy-testid="grid-item"
+      [book]="book"
+      (click)="onGridItemClick.emit(book)"
+    ></grid-item>
     }
   </div>
 </body>

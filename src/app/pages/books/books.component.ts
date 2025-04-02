@@ -3,7 +3,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Book } from '../../shared/models/book';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { BooksState } from '../../store/books/books.state';
 import { BookDialogComponent } from '../../dialogs/book-dialog/book-dialog.component';
 import { CommonModule } from '@angular/common';

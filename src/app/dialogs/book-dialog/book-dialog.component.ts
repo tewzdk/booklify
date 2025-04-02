@@ -7,14 +7,7 @@ import {
   signal,
   ViewChild,
 } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
   MAT_DIALOG_DATA,
@@ -33,7 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { BooksService } from '../../services/books.service';
 import { AutocompleteComponent } from '../../shared/components/autocomplete/autocomplete.component';
-import { OpenLibraryBook } from '../../services/openlibrary.service';
+import { OpenLibraryBook } from '../../shared/models/open-library-book';
 
 interface DialogData {
   book: Book;

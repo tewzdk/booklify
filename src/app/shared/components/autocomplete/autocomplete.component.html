@@ -16,7 +16,6 @@
     requireSelection
     [displayWith]="displayFn.bind(this)"
     (optionSelected)="bookSelected($event)"
-
     #auto="matAutocomplete"
   >
     @for (option of filteredOptions; track option) {

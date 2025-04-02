@@ -9,11 +9,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { debounceTime, distinctUntilChanged, Subject, takeUntil } from 'rxjs';
-import {
-  OpenLibraryBook,
-  OpenlibraryService,
-} from '../../../services/openlibrary.service';
+import { OpenlibraryService } from '../../../services/openlibrary.service';
 import { MatIconModule } from '@angular/material/icon';
+import { OpenLibraryBook } from '../../models/open-library-book';
 
 @Component({
   selector: 'autocomplete',
@@ -44,6 +42,7 @@ export class AutocompleteComponent implements OnDestroy {
       this.loading = this.openlibraryService.loading();
       this.filteredOptions = this.openlibraryService.openLibraryBooks();
     });
+    
     this.searchInput$
       .pipe(
         debounceTime(1000),

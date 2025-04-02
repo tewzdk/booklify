@@ -1,13 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {
-  Theme,
-  ThemeService,
-  default_themes,
-} from '../../services/theme.service';
+import { ThemeService, default_themes } from '../../services/theme.service';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { Theme } from '../../shared/models/theme';
 
 @Component({
   selector: 'app-about',

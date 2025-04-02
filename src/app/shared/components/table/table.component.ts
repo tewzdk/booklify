@@ -5,7 +5,6 @@ import {
   OnDestroy,
   OnInit,
   viewChild,
-  ViewChild,
 } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -39,7 +38,6 @@ export class TableComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
     this.subscriptions.add(
       this.data$().subscribe((data) => {
-        console.log('data', data);
         this.dataSource.data = data;
       })
     );

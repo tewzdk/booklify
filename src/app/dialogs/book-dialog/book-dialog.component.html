@@ -21,7 +21,13 @@
           ></autocomplete>
 
           <mat-action-row>
-            <button cy-testid="books-dialog-next-1" mat-button (click)="nextStep()">Next</button>
+            <button
+              cy-testid="books-dialog-next-1"
+              mat-button
+              (click)="nextStep()"
+            >
+              Next
+            </button>
           </mat-action-row>
         </mat-expansion-panel>
         }
@@ -40,23 +46,49 @@
           </mat-expansion-panel-header>
           <mat-form-field>
             <mat-label>Book Title</mat-label>
-            <input cy-testid="books-input-title" formControlName="title" cdkFocusInitial matInput />
+            <input
+              cy-testid="books-input-title"
+              formControlName="title"
+              cdkFocusInitial
+              matInput
+            />
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Publishing Year</mat-label>
-            <input cy-testid="books-input-firstPublishYear" formControlName="firstPublishYear" type="number" matInput />
+            <input
+              cy-testid="books-input-firstPublishYear"
+              formControlName="firstPublishYear"
+              type="number"
+              matInput
+            />
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Author Name</mat-label>
-            <input cy-testid="books-input-author" formControlName="author" matInput />
+            <input
+              cy-testid="books-input-author"
+              formControlName="author"
+              matInput
+            />
           </mat-form-field>
           <mat-action-row>
             @if(isCreateMode) {
-            <button cy-testid="books-dialog-previous-1" mat-button (click)="prevStep()">Previous</button>
+            <button
+              cy-testid="books-dialog-previous-1"
+              mat-button
+              (click)="prevStep()"
+            >
+              Previous
+            </button>
             }
-            <button cy-testid="books-dialog-next-2" mat-button (click)="nextStep()">Next</button>
+            <button
+              cy-testid="books-dialog-next-2"
+              mat-button
+              (click)="nextStep()"
+            >
+              Next
+            </button>
           </mat-action-row>
         </mat-expansion-panel>
 
@@ -75,11 +107,21 @@
 
           <mat-form-field>
             <mat-label>Summary of the book</mat-label>
-            <textarea cy-testid="books-input-summary" matInput formControlName="summary"></textarea>
+            <textarea
+              cy-testid="books-input-summary"
+              matInput
+              formControlName="summary"
+            ></textarea>
           </mat-form-field>
 
           <mat-action-row>
-            <button cy-testid="books-dialog-previous-2" mat-button (click)="prevStep()">Previous</button>
+            <button
+              cy-testid="books-dialog-previous-2"
+              mat-button
+              (click)="prevStep()"
+            >
+              Previous
+            </button>
           </mat-action-row>
         </mat-expansion-panel>
       </form>
@@ -89,15 +131,32 @@
     @if(deleting()) {
     <span>Are you sure you want to delete?</span>
     <button mat-button (click)="deletingBook(false)">Cancel</button>
-    <button cy-testid="books-dialog-delete-confirm" mat-flat-button (click)="deleteBook()">Delete</button>
+    <button
+      cy-testid="books-dialog-delete-confirm"
+      mat-flat-button
+      (click)="deleteBook()"
+    >
+      Delete
+    </button>
     } @else { @if(!isCreateMode) {
     <span>
-      <button cy-testid="books-dialog-delete" mat-button (click)="deletingBook(true)">Delete</button>
+      <button
+        cy-testid="books-dialog-delete"
+        mat-button
+        (click)="deletingBook(true)"
+      >
+        Delete
+      </button>
     </span>
     }
 
     <button mat-button mat-dialog-close>Cancel</button>
-    <button cy-testid="books-dialog-submit" mat-flat-button (click)="onSubmit()" [disabled]="bookForm.invalid">
+    <button
+      cy-testid="books-dialog-submit"
+      mat-flat-button
+      (click)="onSubmit()"
+      [disabled]="bookForm.invalid"
+    >
       Submit
     </button>
     }

@@ -1,27 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal, WritableSignal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
+import { OpenLibraryBook } from '../shared/models/open-library-book';
+import { OpenLibraryResponse } from '../shared/models/open-library-response';
 
-export interface OpenLibraryBook {
-  author_name: string[];
-  cover_i: number;
-  first_publish_year: number;
-  key: string;
-  title: string;
-  language: string[];
-}
 @Injectable({
   providedIn: 'root',
 })
 export class OpenlibraryService {
+  private readonly OPEN_LIBRARY_API_URL = 'https://openlibrary.org/search.json';
   private readonly http = inject(HttpClient);
-  openLibraryBooks = signal([]);
+  openLibraryBooks = signal<OpenLibraryBook[]>([]);
   loading = signal(false);
 
   searchOpenLibrary(searchTerm: string): void {
+    const trimmedSearchTerm = searchTerm.trim();
     this.loading.set(true);
     this.http
-      .get<any>(`https://openlibrary.org/search.json?q=${searchTerm}`)
-      .subscribe((response) => {
+      .get<any>(
+        `${this.OPEN_LIBRARY_API_URL}?q=${encodeURIComponent(
+          trimmedSearchTerm
+        )}`
+      )
+      .subscribe((response: OpenLibraryResponse) => {
         this.openLibraryBooks.set(response?.docs);
         this.loading.set(false);
       });

@@ -6,19 +6,16 @@ import {
   viewChild,
 } from '@angular/core';
 import { TableComponent } from '../../shared/components/table/table.component';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { BooksState } from '../../store/books/books.state';
 import { Book } from '../../shared/models/book';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { selectFilteredBooks } from '../../store/books/books.selectors';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 
-interface Item {
-  name: string;
-}
 @Component({
   selector: 'app-home',
   standalone: true,

@@ -1,11 +1,7 @@
 <div class="mat-elevation-z8 table-container">
   <mat-form-field>
     <mat-label>Find something you like</mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      #input
-    />
+    <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
   <table mat-table [dataSource]="dataSource" matSort>
     <!-- Book Cover Column -->

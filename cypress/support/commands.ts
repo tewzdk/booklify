@@ -10,7 +10,6 @@
 // }
 //
 // function customCommand(param: any): void {
-//   console.warn(param);
 // }
 //
 // NOTE: You can use it like so:

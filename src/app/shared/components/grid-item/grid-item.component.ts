@@ -3,13 +3,6 @@ import { Book } from '../../models/book';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
 
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
-
 @Component({
   selector: 'grid-item',
   standalone: true,
