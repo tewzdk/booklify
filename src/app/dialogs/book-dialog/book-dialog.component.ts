@@ -18,6 +18,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
@@ -41,6 +42,7 @@ interface DialogData {
     MatExpansionModule,
     MatFormFieldModule,
     MatAutocompleteModule,
+    MatTooltipModule,
     MatIconModule,
     ReactiveFormsModule,
     MatDatepickerModule,
@@ -131,6 +133,13 @@ export class BookDialogComponent {
     }
 
     this.dialogRef.close();
+  }
+
+  get submitTooltip() {
+    if (this.bookForm.invalid) {
+      return 'Please fill out all required fields.';
+    }
+    return '';
   }
 
   get isCreateMode() {

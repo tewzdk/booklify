@@ -52,6 +52,13 @@
               cdkFocusInitial
               matInput
             />
+            @if (bookForm.get('title')?.invalid &&
+            bookForm.get('title')?.touched) {
+            <mat-error
+              >The Title is required, and must be atleast 3
+              characters</mat-error
+            >
+            }
           </mat-form-field>
 
           <mat-form-field>
@@ -62,6 +69,10 @@
               type="number"
               matInput
             />
+            @if (bookForm.get('firstPublishYear')?.invalid &&
+            bookForm.get('firstPublishYear')?.touched) {
+            <mat-error>The field must be a valid year e.g. 2025</mat-error>
+            }
           </mat-form-field>
 
           <mat-form-field>
@@ -71,6 +82,13 @@
               formControlName="author"
               matInput
             />
+            @if (bookForm.get('author')?.invalid &&
+            bookForm.get('author')?.touched) {
+            <mat-error
+              >The author is require, and must be atleast 3
+              characters</mat-error
+            >
+            }
           </mat-form-field>
           <mat-action-row>
             @if(isCreateMode) {
@@ -108,10 +126,18 @@
           <mat-form-field>
             <mat-label>Summary of the book</mat-label>
             <textarea
+              required
               cy-testid="books-input-summary"
               matInput
               formControlName="summary"
             ></textarea>
+            @if (bookForm.get('summary')?.invalid &&
+            bookForm.get('summary')?.touched) {
+            <mat-error
+              >The summary is required, and must be atleast 3
+              characters</mat-error
+            >
+            }
           </mat-form-field>
 
           <mat-action-row>
@@ -151,14 +177,17 @@
     }
 
     <button mat-button mat-dialog-close>Cancel</button>
-    <button
-      cy-testid="books-dialog-submit"
-      mat-flat-button
-      (click)="onSubmit()"
-      [disabled]="bookForm.invalid"
-    >
-      Submit
-    </button>
+    <div [matTooltip]="submitTooltip">
+      <button
+        cy-testid="books-dialog-submit"
+        mat-flat-button
+        (click)="onSubmit()"
+        [disabled]="bookForm.invalid"
+      >
+        Submit
+      </button>
+    </div>
+
     }
   </mat-dialog-actions>
 </div>

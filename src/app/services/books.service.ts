@@ -41,7 +41,7 @@ export class BooksService {
       ],
       author: ['', [Validators.required, Validators.minLength(3)]],
       coverId: [''],
-      summary: ['', [Validators.required]],
+      summary: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
