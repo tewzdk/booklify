@@ -1,4 +1,4 @@
-<article>
+<article cy-testid="about-article">
   <mat-card appearance="outlined">
     <mat-card-header>
       <mat-card-title>About this app</mat-card-title>
@@ -21,6 +21,7 @@
             <mat-card-title>{{ theme.text }}</mat-card-title>
             <mat-card-subtitle>
               <button
+                [attr.cy-testid]="'theme-button-' + theme.code"
                 mat-stroked-button
                 (click)="onThemeButtonClick(theme.code)"
               >

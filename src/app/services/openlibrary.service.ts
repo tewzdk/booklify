@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, signal, WritableSignal } from '@angular/core';
+import { inject, Injectable, signal, WritableSignal } from '@angular/core';
 
 export interface OpenLibraryBook {
   author_name: string[];
@@ -13,10 +13,9 @@ export interface OpenLibraryBook {
   providedIn: 'root',
 })
 export class OpenlibraryService {
+  private readonly http = inject(HttpClient);
   openLibraryBooks = signal([]);
   loading = signal(false);
-
-  constructor(private http: HttpClient) {}
 
   searchOpenLibrary(searchTerm: string): void {
     this.loading.set(true);

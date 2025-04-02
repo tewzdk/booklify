@@ -2,13 +2,23 @@
   <span class="content__logo">Booklify</span>
 
   <span class="content__navigation">
-    <button mat-stroked-button routerLink="/">Home</button>
-    <button mat-stroked-button routerLink="/books">Books</button>
-    <button mat-stroked-button routerLink="/about">About</button>
+    <button cy-testid="navigation-home" mat-stroked-button routerLink="/">
+      Home
+    </button>
+    <button cy-testid="navigation-books" mat-stroked-button routerLink="/books">
+      Books
+    </button>
+    <button cy-testid="navigation-about" mat-stroked-button routerLink="/about">
+      About
+    </button>
   </span>
 
   <span class="content__theme">
-    <div (click)="toggleTheme()" class="content__theme">
+    <div
+      cy-testid="navigation-darkmode"
+      (click)="toggleTheme()"
+      class="content__theme"
+    >
       <mat-icon>{{ darkMode ? "light_mode" : "dark_mode" }}</mat-icon>
     </div>
   </span>

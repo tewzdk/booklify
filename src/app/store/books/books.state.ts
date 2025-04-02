@@ -19,6 +19,7 @@ export const initialState: BooksState = {
       publisher: 'Scribner',
       firstPublishYear: 1925,
       coverId: '10590366',
+      summary: 'A novel set in the 1920s that tells the story of Jay Gatsby, a mysterious millionaire, and his obsession with the beautiful Daisy Buchanan.',
     },
     {
       id: 'fd3603d1-fdb6-4892-a512-01a6fab9f90d',
@@ -28,6 +29,7 @@ export const initialState: BooksState = {
       publisher: 'Scribner',
       firstPublishYear: 2025,
       coverId: '14826089',
+      summary: 'A gripping tale of love and loss set against the backdrop of a world on the brink of destruction.',
     },
   ],
   filter: '',
